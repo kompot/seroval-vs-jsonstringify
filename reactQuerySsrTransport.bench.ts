@@ -176,7 +176,7 @@ for (const dataset of catalogDatasets) {
   const { payload, jsonScriptText, crossText } = prepareDataset(dataset);
   let sizesReported = false;
 
-  describe(`SSR payload encode (server) — ${dataset.name}`, () => {
+  describe(`${dataset.name}: SSR payload encode (server)`, () => {
     bench(
       'JSON.stringify + html-escape (current transport)',
       () => {
@@ -217,7 +217,7 @@ for (const dataset of catalogDatasets) {
     );
   });
 
-  describe(`SSR payload decode (client) — ${dataset.name}`, () => {
+  describe(`${dataset.name}: SSR payload decode (client)`, () => {
     bench(
       'JSON.parse (current transport hydration)',
       () => {
